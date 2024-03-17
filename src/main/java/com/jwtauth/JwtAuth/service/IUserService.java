@@ -5,6 +5,6 @@ import com.jwtauth.JwtAuth.models.User;
 import java.util.List;
 
 public interface IUserService {
-    public void addUser(User request);
-    public List<User> getAllUsers();
+    void addUser(User request);
+    List<User> getAllUsers();
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @RequestMapping("/home")
 public class HomeController {
 
-    private IUserService userService;
+    IUserService userService;
 
     @Autowired
     public HomeController(IUserService service){
