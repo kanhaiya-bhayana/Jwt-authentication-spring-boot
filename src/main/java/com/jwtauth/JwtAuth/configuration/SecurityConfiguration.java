@@ -37,7 +37,8 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests(config ->
                 config
                         .requestMatchers(HttpMethod.GET,"home/users").hasAnyRole("EMPLOYEE", "ADMIN")
-                        .requestMatchers(HttpMethod.POST,"home/adduser").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.POST,"home/*").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET,"home/*").hasRole("ADMIN")
         );
 
 

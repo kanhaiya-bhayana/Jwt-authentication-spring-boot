@@ -5,6 +5,7 @@ import com.jwtauth.JwtAuth.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
 import java.util.List;
 
 @RestController
@@ -27,5 +28,10 @@ public class HomeController {
     @GetMapping("/users")
     private List<User> getUsers(){
         return userService.getAllUsers();
+    }
+
+    @GetMapping("/get-current-user")
+    private String getLoginUser(Principal principal){
+        return principal.getName();
     }
 }
